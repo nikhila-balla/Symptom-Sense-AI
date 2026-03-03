@@ -1,0 +1,233 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #F7F9FB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #222;
+}
+
+.container {
+    text-align: center;
+    max-width: 480px;
+    padding: 30px;
+}
+
+.app-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0E738C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-title i {
+    font-size: 28px;
+    margin-right: 8px;
+    vertical-align: middle;
+    color: #0E738C;
+}
+
+.subtitle {
+    font-size: 16px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.disclaimer {
+    background: #eef9ff;
+    border-left: 4px solid #0E738C;
+    padding: 10px;
+    margin-bottom: 22px;
+    font-size: 13px;
+    line-height: 1.4;
+    border-radius: 6px;
+    color: #333;
+}
+
+.primary-btn {
+    background: #0E738C;
+    color: white;
+    border: none;
+    padding: 14px 26px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.primary-btn:hover {
+    background: #0C5E74;
+}
+
+.footer-note {
+    margin-top: 16px;
+    font-size: 13px;
+    color: #555;
+}
+.container-box {
+    max-width: 480px;
+    background: #fff;
+    padding: 28px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-top: 20px;
+    text-align: left;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 18px;
+    color: #0E738C;
+    display: flex;
+    align-items: center;
+}
+
+.section-title i {
+    font-size: 22px;
+    margin-right: 8px;
+    color: #0E738C;
+}
+
+.form-box label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-box input,
+.form-box select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.footer-note-small {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #0E738C;
+    cursor: pointer;
+}
+.category-title {
+    margin-top: 18px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0E738C;
+    display: flex;
+    align-items: center;
+}
+
+.category-title i {
+    margin-right: 6px;
+    font-size: 18px;
+}
+
+.symptom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 12px;
+    margin-top: 6px;
+}
+
+.symptom-grid label {
+    font-size: 14px;
+    color: #333;
+}
+/* --- Accordion Styling for Symptoms Page --- */
+
+.accordion-btn {
+    width: 100%;
+    background: #eef9ff;
+    border: none;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #0E738C;
+    margin-top: 8px;
+    border-radius: 6px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.accordion-btn i {
+    margin-right: 8px;
+}
+
+.accordion-body {
+    padding: 10px;
+    border-left: 3px solid #0E738C;
+    display: none;
+    flex-direction: column;
+    margin-bottom: 6px;
+}
+
+.scroll-box {
+    max-height: 160px;
+    overflow-y: auto;
+}
+
+.accordion-body label {
+    display: block;
+    margin: 4px 0;
+    font-size: 14px;
+}
+/* Medication Page Spacing Tweaks */
+.form-box select,
+.form-box input {
+    margin-top: 4px;
+    margin-bottom: 14px;
+}
+#medicationNameField,
+#improvementField {
+    transition: 0.25s ease;
+}
+/* Result Page Styling */
+.report-block p {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #333;
+}
+
+.report-block strong {
+    color: #0E738C;
+}
+
+/* Risk Bar */
+.risk-bar {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 12px 0;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+}
+
+/* Color Levels */
+.risk-bar.low {
+    background: #43A047; /* green */
+}
+
+.risk-bar.moderate {
+    background: #F9A825; /* yellow */
+    color: #000; /* better contrast */
+}
+
+.risk-bar.high {
+    background: #E53935; /* red */
+}

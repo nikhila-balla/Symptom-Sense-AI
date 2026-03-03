@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assessment Result - Symptom Sense AI</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container-box">
+
+    <h2 class="section-title">
+        <i class="ri-clipboard-pulse-line"></i> Assessment Summary
+    </h2>
+
+    <div class="report-block">
+
+        <p><strong>Age:</strong> {{ age }}</p>
+        <p><strong>Gender:</strong> {{ gender }}</p>
+        <p><strong>Symptom Cluster:</strong> {{ cluster }}</p>
+        <p><strong>Symptoms:</strong> {{ symptoms | join(", ") }}</p>
+        <p><strong>Duration:</strong> {{ duration }}</p>
+        <p><strong>Medication Taken:</strong> {{ medication_taken }}</p>
+        <p><strong>Response to Medication:</strong> {{ improvement }}</p>
+
+        <p><strong>Risk Level:</strong></p>
+        <div class="risk-bar {{ risk | lower }}">
+            {{ risk }}
+        </div>
+
+        <p><strong>Recommendation:</strong><br>
+            {% if risk == "High" %}
+                Please consult a doctor immediately.
+            {% elif risk == "Moderate" %}
+                Monitor symptoms and consider medical advice.
+            {% else %}
+                Rest, hydration, and home care should be sufficient.
+            {% endif %}
+        </p>
+
+    </div>
+
+    <p class="footer-note-small" onclick="window.location.href='/'">
+        ← Start Over
+    </p>
+
+</div>
+
+</body>
+</html>

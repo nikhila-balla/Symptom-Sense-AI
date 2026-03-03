@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Symptoms - Symptom Sense AI</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-box">
+
+    <h2 class="section-title">
+        <i class="ri-heart-pulse-line"></i> Select Your Symptoms
+    </h2>
+
+    <form action="/medication" method="POST" class="form-box">
+
+        <!-- Hidden values from previous page -->
+        <input type="hidden" name="age" value="{{ age }}">
+        <input type="hidden" name="gender" value="{{ gender }}">
+
+        <!-- ACCORDION START -->
+        <div class="accordion">
+
+            <!-- Respiratory -->
+            <button type="button" class="accordion-btn"><i class="ri-lungs-line"></i> Respiratory Symptoms</button>
+            <div class="accordion-body scroll-box">
+                <label><input type="checkbox" name="symptoms" value="cough"> Cough</label>
+                <label><input type="checkbox" name="symptoms" value="sore_throat"> Sore Throat</label>
+                <label><input type="checkbox" name="symptoms" value="breathlessness"> Breathlessness</label>
+                <label><input type="checkbox" name="symptoms" value="wheezing"> Wheezing</label>
+                <label><input type="checkbox" name="symptoms" value="chest_tightness"> Chest Tightness</label>
+                <label><input type="checkbox" name="symptoms" value="nasal_congestion"> Nasal Congestion</label>
+                <label><input type="checkbox" name="symptoms" value="runny_nose"> Runny Nose</label>
+                <label><input type="checkbox" name="symptoms" value="sneezing"> Sneezing</label>
+            </div>
+
+            <!-- Neurological -->
+            <button type="button" class="accordion-btn"><i class="ri-brain-line"></i> Neurological Symptoms</button>
+            <div class="accordion-body scroll-box">
+                <label><input type="checkbox" name="symptoms" value="headache"> Headache</label>
+                <label><input type="checkbox" name="symptoms" value="dizziness"> Dizziness</label>
+                <label><input type="checkbox" name="symptoms" value="numbness"> Numbness</label>
+                <label><input type="checkbox" name="symptoms" value="tremors"> Tremors</label>
+                <label><input type="checkbox" name="symptoms" value="memory_problems"> Memory Issues</label>
+                <label><input type="checkbox" name="symptoms" value="tingling"> Tingling</label>
+                <label><input type="checkbox" name="symptoms" value="lightheadedness"> Lightheadedness</label>
+                <label><input type="checkbox" name="symptoms" value="confusion"> Confusion</label>
+            </div>
+
+            <!-- Musculoskeletal -->
+            <button type="button" class="accordion-btn"><i class="ri-bone-line"></i> Musculoskeletal</button>
+            <div class="accordion-body scroll-box">
+                <label><input type="checkbox" name="symptoms" value="back_pain"> Back Pain</label>
+                <label><input type="checkbox" name="symptoms" value="joint_pain"> Joint Pain</label>
+                <label><input type="checkbox" name="symptoms" value="knee_pain"> Knee Pain</label>
+                <label><input type="checkbox" name="symptoms" value="hand_pain"> Hand Pain</label>
+                <label><input type="checkbox" name="symptoms" value="muscle_pain"> Muscle Pain</label>
+                <label><input type="checkbox" name="symptoms" value="neck_pain"> Neck Pain</label>
+                <label><input type="checkbox" name="symptoms" value="leg_pain"> Leg Pain</label>
+            </div>
+
+            <!-- Dermatological -->
+            <button type="button" class="accordion-btn"><i class="ri-body-scan-line"></i> Dermatological</button>
+            <div class="accordion-body scroll-box">
+                <label><input type="checkbox" name="symptoms" value="rash"> Rash</label>
+                <label><input type="checkbox" name="symptoms" value="itching"> Itching</label>
+                <label><input type="checkbox" name="symptoms" value="dry_skin"> Dry Skin</label>
+                <label><input type="checkbox" name="symptoms" value="hairfall"> Hairfall</label>
+                <label><input type="checkbox" name="symptoms" value="acne"> Acne</label>
+                <label><input type="checkbox" name="symptoms" value="skin_redness"> Redness</label>
+                <label><input type="checkbox" name="symptoms" value="skin_peeling"> Skin Peeling</label>
+            </div>
+
+            <!-- Gastrointestinal -->
+            <button type="button" class="accordion-btn"><i class="ri-restaurant-line"></i> Gastrointestinal</button>
+            <div class="accordion-body scroll-box">
+                <label><input type="checkbox" name="symptoms" value="nausea"> Nausea</label>
+                <label><input type="checkbox" name="symptoms" value="vomiting"> Vomiting</label>
+                <label><input type="checkbox" name="symptoms" value="stomach_pain"> Stomach Pain</label>
+                <label><input type="checkbox" name="symptoms" value="diarrhea"> Diarrhea</label>
+                <label><input type="checkbox" name="symptoms" value="constipation"> Constipation</label>
+                <label><input type="checkbox" name="symptoms" value="bloating"> Bloating</label>
+                <label><input type="checkbox" name="symptoms" value="loss_of_appetite"> Loss of Appetite</label>
+            </div>
+
+            <!-- Infection/Systemic -->
+            <button type="button" class="accordion-btn"><i class="ri-virus-line"></i> Infection / Systemic</button>
+            <div class="accordion-body scroll-box">
+                <label><input type="checkbox" name="symptoms" value="fever"> Fever</label>
+                <label><input type="checkbox" name="symptoms" value="fatigue"> Fatigue</label>
+                <label><input type="checkbox" name="symptoms" value="chills"> Chills</label>
+                <label><input type="checkbox" name="symptoms" value="night_sweats"> Night Sweats</label>
+                <label><input type="checkbox" name="symptoms" value="body_aches"> Body Aches</label>
+                <label><input type="checkbox" name="symptoms" value="lymph_swelling"> Swollen Lymph Nodes</label>
+                <label><input type="checkbox" name="symptoms" value="weakness"> Unexplained Weakness</label>
+            </div>
+
+            <!-- Metabolic -->
+            <button type="button" class="accordion-btn"><i class="ri-syringe-line"></i> Metabolic / Endocrine</button>
+            <div class="accordion-body scroll-box">
+                <label><input type="checkbox" name="symptoms" value="increased_thirst"> Increased Thirst</label>
+                <label><input type="checkbox" name="symptoms" value="frequent_urination"> Frequent Urination</label>
+                <label><input type="checkbox" name="symptoms" value="heat_intolerance"> Heat Intolerance</label>
+                <label><input type="checkbox" name="symptoms" value="cold_intolerance"> Cold Intolerance</label>
+                <label><input type="checkbox" name="symptoms" value="weight_loss"> Weight Loss</label>
+                <label><input type="checkbox" name="symptoms" value="weight_gain"> Weight Gain</label>
+            </div>
+
+        </div>
+        <!-- ACCORDION END -->
+
+        <button type="submit" class="primary-btn" style="margin-top: 14px;">Next →</button>
+    </form>
+
+    <p class="footer-note-small" onclick="window.location.href='/user'">← Back</p>
+
+</div>
+
+<script>
+const accBtns = document.querySelectorAll('.accordion-btn');
+accBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const body = btn.nextElementSibling;
+        body.style.display = body.style.display === 'block' ? 'none' : 'block';
+    });
+});
+</script>
+
+</body>
+</html>

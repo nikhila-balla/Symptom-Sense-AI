@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information - Symptom Sense AI</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container-box">
+
+    <h2 class="section-title">
+        <i class="ri-user-line"></i> Your Information
+    </h2>
+
+    <form action="/symptoms" method="POST" class="form-box">
+
+        <label>Age</label>
+        <input type="number" name="age" min="1" max="120" required placeholder="Enter your age">
+
+        <label>Gender (optional)</label>
+        <select name="gender">
+            <option value="">Prefer not to say</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+
+        <button type="submit" class="primary-btn">Next →</button>
+    </form>
+
+    <p class="footer-note-small" onclick="window.location.href='/'">
+        ← Back to Home
+    </p>
+
+</div>
+
+</body>
+</html>
