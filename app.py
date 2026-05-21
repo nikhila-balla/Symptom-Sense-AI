@@ -3,8 +3,12 @@ import pickle
 
 app = Flask(__name__)
 
+import os
+
 # Load trained model
-with open("model.pkl", "rb") as f:
+base_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(base_dir, "model.pkl")
+with open(model_path, "rb") as f:
     saved = pickle.load(f)
 
 model = saved["model"]
