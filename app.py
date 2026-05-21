@@ -5,19 +5,27 @@ app = Flask(__name__)
 
 import os
 
-# Load trained model
-base_dir = os.path.dirname(os.path.abspath(__file__))
-model_path = os.path.join(base_dir, "model.pkl")
-with open(model_path, "rb") as f:
-    saved = pickle.load(f)
+try:
+    # Load trained model
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(base_dir, "model.pkl")
+    with open(model_path, "rb") as f:
+        saved = pickle.load(f)
 
-model = saved["model"]
-le_gender = saved["le_gender"]
-le_cluster = saved["le_cluster"]
-le_duration = saved["le_duration"]
-le_improvement = saved["le_improvement"]
-le_med = saved["le_med"]
-le_risk = saved["le_risk"]
+    model = saved["model"]
+    le_gender = saved["le_gender"]
+    le_cluster = saved["le_cluster"]
+    le_duration = saved["le_duration"]
+    le_improvement = saved["le_improvement"]
+    le_med = saved["le_med"]
+    le_risk = saved["le_risk"]
+except Exception as e:
+    import traceback
+    error_message = traceback.format_exc()
+    @app.route('/', defaults={'path': ''})
+    @app.route('/<path:path>')
+    def catch_all(path):
+        return f"<h1>Error loading the app!</h1><pre>{error_message}</pre>", 500
 
 clusters = {
     "Cardiovascular": ["chest pain", "palpitations", "shortness of breath", "swelling legs", "fainting", "tightness chest"],
